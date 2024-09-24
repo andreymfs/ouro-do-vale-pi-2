@@ -1,0 +1,45 @@
+# Definir a imagem Docker base
+image: python:3.8
+
+# Definir os serviços necessários
+services:
+  - docker:dind
+
+# Variáveis globais
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+  DOCKER_HOST: "tcp://docker:2375/"
+
+# Cache para evitar downloads repetidos
+cache:
+  paths:
+    - .cache/pip
+
+# Etapas do pipeline
+stages:
+  - build
+  - test
+
+# Etapa de Build (compilação)
+build:
+  stage: build
+  script:
+    - echo "Compilando e preparando o ambiente..."
+    - pip install -r requirements.txt
+  tags:
+    - docker
+  only:
+    - dev
+    - stage
+
+# Etapa de Testes (Testes Automatizados)
+test:
+  stage: test
+  script:
+    - echo "Executando testes automatizados..."
+    - pytest
+  tags:
+    - docker
+  only:
+    - dev
+    - stage
