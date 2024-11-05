@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5; /* Fundo claro */
+    color: #333; /* Cor do texto */
+    line-height: 1.6; /* Melhora a legibilidade */
+}
+
+.banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+}
+
+.menu {
+    background-color: #4a4a4a; /* Cor de fundo do menu */
+    color: white;
+    padding: 15px 0;
+    position: fixed;
+    top: 100px; /* Abaixo do banner */
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center; /* Centraliza o menu */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra do menu */
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    position: relative; /* Necessário para o efeito de pseudo-elemento */
+    transition: color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+}
+
+.menu a:hover {
+    color: #ff8c00; /* Cor do texto ao passar o mouse */
+    transform: translateY(-3px); /* Levanta o botão */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra ao passar o mouse */
+}
+
+.content {
+    margin-top: 160px; /* Deixa espaço para o banner e menu fixo */
+    padding: 20px;
+    max-width: 800px; /* Largura máxima do conteúdo */
+    margin-left: auto; /* Centraliza o conteúdo */
+    margin-right: auto; /* Centraliza o conteúdo */
+    background-color: white; /* Fundo branco */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra do conteúdo */
+}
+
+h1 {
+    font-weight: 600; /* Peso da fonte */
+    color: #333; /* Cor do título */
+}
+
+h2 {
+    font-weight: 500; /* Peso da fonte para subtítulos */
+    color: #444; /* Cor dos subtítulos */
+    margin-top: 20px; /* Espaçamento superior */
+}
+
+p {
+    margin-bottom: 15px; /* Espaçamento inferior */
+}
+
+/* Estilo do formulário */
+form {
+    display: flex;
+    flex-direction: column; /* Coloca os elementos em coluna */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="submit"] {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc; /* Borda padrão */
+    border-radius: 5px; /* Bordas arredondadas */
+}
+
+input[type="submit"] {
+    background-color: #ff8c00; /* Cor de fundo do botão */
+    color: white; /* Cor do texto do botão */
+    cursor: pointer; /* Cursor em forma de mão */
+    transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+}
+
+input[type="submit"]:hover {
+    background-color: #e07b00; /* Cor ao passar o mouse */
+    transform: translateY(-2px); /* Levanta o botão */
+}
+
+/* Estilo de mensagens de erro */
+.erro {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+}

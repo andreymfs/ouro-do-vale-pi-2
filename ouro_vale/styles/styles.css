@@ -1,0 +1,117 @@
+body {
+    font-family: 'Poppins', sans-serif; /* Define a fonte Poppins */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: white;
+    color: white;
+    text-align: center;
+}
+
+.banner-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.banner {
+    padding: 20px;
+}
+
+
+.menu {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    top: 100px; /* Abaixo do banner */
+    width: 100%;
+    z-index: 1000;
+    display: flex; /* Usando flexbox para alinhar itens */
+    justify-content: center; /* Centraliza o menu */
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    position: relative; /* Necessário para o efeito de pseudo-elemento */
+    overflow: hidden; /* Esconde o efeito que sai do link */
+    transition: color 0.3s, transform 0.3s; /* Transição para cor e transformação */
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px; /* Espessura da linha */
+    background: #555; /* Cor da linha */
+    transition: width 0.3s, left 0.3s; /* Transição para a linha */
+}
+
+.menu a:hover {
+    color: #fff; /* Cor do texto ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o tamanho do botão */
+}
+
+.menu a:hover::after {
+    width: 100%; /* Faz a linha expandir */
+    left: 0; /* Move a linha para a esquerda */
+}
+
+.menu a:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra ao passar o mouse */
+}
+
+.conteudo p {
+    line-height: 2; /* Ajuste conforme necessário */
+    margin: 10px 0; /* Espaçamento entre parágrafos */
+}
+.conteudo {
+    padding: 20px;
+}
+
+#content {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    flex-direction: column; /* Alinha os itens em coluna */
+    text-align: center; /* Centraliza o texto */
+    margin: 0 250px; /* Margens laterais de 20px */
+}
+
+.contato-icons {
+    display: flex;
+    flex-direction: column; /* Coloca os itens em coluna */
+    align-items: flex-start; /* Alinha à esquerda */
+    margin: 20px 0;
+}
+
+.contato-item {
+    display: flex; /* Usar flex para alinhar ícone e texto */
+    align-items: center; /* Centraliza verticalmente */
+    margin: 10px 0; /* Espaçamento entre os itens */
+}
+
+.contato-link {
+    display: flex; /* Usar flex para alinhar o conteúdo */
+    align-items: center; /* Centraliza verticalmente */
+    text-decoration: none; /* Remove sublinhado do link */
+    color: black; /* Cor do texto */
+}
+
+.icon {
+    width: 60px; /* Tamanho do ícone */
+    height: 60px; /* Tamanho do ícone */
+    margin-right: 10px; /* Espaçamento entre ícone e texto */
+    transition: transform 0.3s; /* Suaviza o efeito de hover */
+}
+
+.icon:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+}
